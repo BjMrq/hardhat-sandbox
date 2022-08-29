@@ -1,5 +1,5 @@
 import "./get-current-gas-info"
-import "./get-balance"
+import "./get-address-info"
 import "./get-logs"
 import "./get-network"
 import "./get-transaction-info"

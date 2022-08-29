@@ -1,0 +1,16 @@
+{
+  "mochaExplorer.files": "test/**/*.{j,t}s",
+  "solidity.compileUsingRemoteVersion": "v0.8.4",
+  "cSpell.words": [
+    "arbitrum",
+    "astro",
+    "Bytecode",
+    "hedera",
+    "hethers",
+    "Initializable",
+    "Pausable",
+    "Reentrancy",
+    "Sourcify",
+    "staker"
+  ]
+}

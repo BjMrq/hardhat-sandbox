@@ -1,0 +1,24 @@
+{
+  "extends": "solhint:recommended",
+  "rules": {
+    "compiler-version": [
+      "error",
+      "^0.8.0"
+    ],
+    "avoid-low-level-calls": "off",
+    "mark-callable-contracts": "off",
+    "no-empty-blocks": "off",
+    "var-name-mixedcase": "off",
+    "not-rely-on-time": "off",
+    "func-visibility": [
+      "warn",
+      {
+        "ignoreConstructors": true
+      }
+    ],
+    "prettier/prettier": "warning"
+  },
+  "plugins": [
+    "prettier"
+  ]
+}

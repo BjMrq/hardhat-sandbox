@@ -1,0 +1,58 @@
+{
+  "name": "solidity-dao",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "hardhat deploy --network hardhat",
+    "deploy:harmony": "hardhat deploy --network harmony",
+    "deploy:hederatest": "hardhat deploy --network hederatest",
+    "deploy:hedera": "hardhat deploy --network hedera",
+    "deploy:rinkeby": "hardhat deploy --network rinkeby",
+    "deploy:rinkeby:reset": "hardhat deploy --network rinkeby --reset",
+    "deploy:goerli": "hardhat deploy --network goerli",
+    "deploy:goerli:reset": "hardhat deploy --network goerli --reset",
+    "compile": "hardhat compile --network hardhat",
+    "script": "hardhat run --network localhost",
+    "script:rinkeby": "hardhat run --network rinkeby",
+    "script:arbitrum": "hardhat run --network arbitrum",
+    "start": "hardhat node --network hardhat",
+    "test": "hardhat test --network hardhat"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@chainlink/contracts": "^0.4.1",
+    "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@openzeppelin/contracts": "4.7.3",
+    "@openzeppelin/contracts-upgradeable": "^4.7.3",
+    "@openzeppelin/hardhat-upgrades": "^1.20.0",
+    "@typechain/ethers-v5": "^10.1.0",
+    "@typechain/hardhat": "^6.1.2",
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "^17.0.23",
+    "dotenv": "^16.0.1",
+    "ethereum-waffle": "^3.4.4",
+    "ethers": "^5.7.0",
+    "hardhat": "^2.10.2",
+    "hardhat-deploy": "^0.11.12",
+    "hardhat-gas-reporter": "^1.0.8",
+    "prettier": "^2.7.1",
+    "prettier-plugin-solidity": "1.0.0-beta.24",
+    "solhint": "^3.3.7",
+    "solhint-plugin-prettier": "^0.0.5",
+    "ts-node": "^10.9.1",
+    "typechain": "^8.1.0",
+    "typescript": "^4.8.2"
+  },
+  "dependencies": {
+    "@hashgraph/sdk": "^2.18.0",
+    "@nomiclabs/hardhat-etherscan": "^3.1.0",
+    "defender-relay-client": "^1.28.1"
+  },
+  "volta": {
+    "node": "18.8.0"
+  }
+}

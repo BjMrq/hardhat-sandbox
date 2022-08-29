@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "dist"
+  },
+  "include": [
+    "./deploy",
+    "./helpers",
+    "./scripts",
+    "tests",
+    "./helpers/generated-types",
+    "./node_modules",
+    "tasks",
+    "tasks"
+  ],
+  "typeRoots": [
+    "./node_modules/@types",
+    "./helpers/generated-types/index.d.ts"
+  ],
+  "types": [
+    "node"
+  ],
+  "files": [
+    "./hardhat.config.ts"
+  ]
+}

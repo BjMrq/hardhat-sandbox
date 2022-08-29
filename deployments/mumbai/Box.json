@@ -1,0 +1,350 @@
+{
+  "address": "0x612F23Ffbc1b432aeaf0d6C309e45E44D2874F84",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "initialColor",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "newValue",
+          "type": "string"
+        }
+      ],
+      "name": "ColorChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "newValue",
+          "type": "bool"
+        }
+      ],
+      "name": "ShouldRevertChanged",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "newValue",
+          "type": "string"
+        }
+      ],
+      "name": "changeColorDryRun",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "newValue",
+          "type": "string"
+        }
+      ],
+      "name": "changeValue",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "newValue",
+          "type": "string"
+        }
+      ],
+      "name": "changeValueOwner",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getValue",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getVersion",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "shouldRevert",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "switchShouldRevert",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xab9c19b8b3fa26ef4ea9e1feb9de600be1810ff209b96f69d5f9a57b4f3c764c",
+  "receipt": {
+    "to": null,
+    "from": "0x1bCa0bf5e8796e45F4F25927AaB9BF2991fd3a5B",
+    "contractAddress": "0x612F23Ffbc1b432aeaf0d6C309e45E44D2874F84",
+    "transactionIndex": 9,
+    "gasUsed": "510549",
+    "logsBloom": "0x04000000000000008000000000000000000000000000000000800000000000000000400000000000000000000000000000008000000000000000000000000000000000000000000000000000000000800001000000000000000100000000004004000000020800000000000000000800000000000000000080000000000000400000000000000000000000000000000000000000000080000000000000000000200000000000000000000000000000000000000000000000000000000000004000000000000000000001000008000000000000000000000000100040000020000000000000000000000000000000000000000000000000000000000000100000",
+    "blockHash": "0x60a1700e36c121a388cd8910783c95c2a010643139bddc7c8990f0b062b66f53",
+    "transactionHash": "0xab9c19b8b3fa26ef4ea9e1feb9de600be1810ff209b96f69d5f9a57b4f3c764c",
+    "logs": [
+      {
+        "transactionIndex": 9,
+        "blockNumber": 27731458,
+        "transactionHash": "0xab9c19b8b3fa26ef4ea9e1feb9de600be1810ff209b96f69d5f9a57b4f3c764c",
+        "address": "0x612F23Ffbc1b432aeaf0d6C309e45E44D2874F84",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000001bca0bf5e8796e45f4f25927aab9bf2991fd3a5b"
+        ],
+        "data": "0x",
+        "logIndex": 50,
+        "blockHash": "0x60a1700e36c121a388cd8910783c95c2a010643139bddc7c8990f0b062b66f53"
+      },
+      {
+        "transactionIndex": 9,
+        "blockNumber": 27731458,
+        "transactionHash": "0xab9c19b8b3fa26ef4ea9e1feb9de600be1810ff209b96f69d5f9a57b4f3c764c",
+        "address": "0x0000000000000000000000000000000000001010",
+        "topics": [
+          "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+          "0x0000000000000000000000000000000000000000000000000000000000001010",
+          "0x0000000000000000000000001bca0bf5e8796e45f4f25927aab9bf2991fd3a5b",
+          "0x000000000000000000000000be188d6641e8b680743a4815dfa0f6208038960f"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000488daa1724b30300000000000000000000000000000000000000000000000009b0e70cf330fe480000000000000000000000000000000000000000000023e3370df8510d3fb80d00000000000000000000000000000000000000000000000009685962dc0c4b450000000000000000000000000000000000000000000023e3375685fb24646b10",
+        "logIndex": 51,
+        "blockHash": "0x60a1700e36c121a388cd8910783c95c2a010643139bddc7c8990f0b062b66f53"
+      }
+    ],
+    "blockNumber": 27731458,
+    "cumulativeGasUsed": "2744943",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "GreatValue"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "52e477554c0157e947a2e47931ca4f3c",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.4+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"initialColor\",\"type\":\"string\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"newValue\",\"type\":\"string\"}],\"name\":\"ColorChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"newValue\",\"type\":\"bool\"}],\"name\":\"ShouldRevertChanged\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"newValue\",\"type\":\"string\"}],\"name\":\"changeColorDryRun\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"newValue\",\"type\":\"string\"}],\"name\":\"changeValue\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"newValue\",\"type\":\"string\"}],\"name\":\"changeValueOwner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getValue\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getVersion\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"shouldRevert\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"switchShouldRevert\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Mr Tumeric A. Gardner\",\"custom:experimental\":\"This is an experimental contract.\",\"details\":\"All function calls are currently implemented without..\",\"kind\":\"dev\",\"methods\":{\"changeColorDryRun(string)\":{\"custom:event-only\":\"This function simply emit an event.\",\"details\":\"The Alexandr N. Tetearing algorithm could increase precision\",\"params\":{\"newValue\":\"The new value to be stored in the box state\"}},\"changeValue(string)\":{\"details\":\"The Alexandr N. Tetearing algorithm could increase precision\",\"params\":{\"newValue\":\"The new value to be stored in the box state\"}},\"changeValueOwner(string)\":{\"details\":\"The Alexandr N. Tetearing algorithm could increase precision\",\"params\":{\"newValue\":\"The new value to be stored in the box state\"}},\"getValue()\":{\"details\":\"Returns only a string.\",\"returns\":{\"_0\":\"The current value of in the box state\"}},\"getVersion()\":{\"details\":\"Returns only a string.\",\"returns\":{\"_0\":\"The current version of the contract\"}},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"title\":\"A box containing some value\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"changeColorDryRun(string)\":{\"notice\":\"Allow to simulate changing the value stored in the Box\"},\"changeValue(string)\":{\"notice\":\"Allow to change the value stored in the BoxOnly the Owner can call this function\"},\"changeValueOwner(string)\":{\"notice\":\"Allow to change the value stored in the BoxOnly the Owner can call this function\"},\"getValue()\":{\"notice\":\"Returns current value in the box.\"},\"getVersion()\":{\"notice\":\"Returns current version of the contract.\"}},\"notice\":\"You can use this contract for only the most basic simulation\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Box.sol\":\"Box\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (access/Ownable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../utils/Context.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * By default, the owner account will be the one that deploys the contract. This\\n * can later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract Ownable is Context {\\n    address private _owner;\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the deployer as the initial owner.\\n     */\\n    constructor() {\\n        _transferOwnership(_msgSender());\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        require(owner() == _msgSender(), \\\"Ownable: caller is not the owner\\\");\\n        _;\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions anymore. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby removing any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        require(newOwner != address(0), \\\"Ownable: new owner is the zero address\\\");\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0x24e0364e503a9bbde94c715d26573a76f14cd2a202d45f96f52134ab806b67b9\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"contracts/Box.sol\":{\"content\":\"// contracts/Box.sol\\n// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.4;\\n\\nimport \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\n\\n/// @title A box containing some value\\n/// @author Mr Tumeric A. Gardner\\n/// @notice You can use this contract for only the most basic simulation\\n/// @dev All function calls are currently implemented without..\\n/// @custom:experimental This is an experimental contract.\\ncontract Box is Ownable {\\n  string private value;\\n  bool public shouldRevert;\\n\\n  // Emitted when the stored value changes\\n  event ColorChanged(string newValue);\\n    event ShouldRevertChanged(bool newValue);\\n\\n  constructor(string memory initialColor) {\\n    value = initialColor;\\n    shouldRevert = false;\\n  }\\n\\n  function switchShouldRevert() public onlyOwner {\\n    shouldRevert = !shouldRevert;\\n    emit ShouldRevertChanged(shouldRevert);\\n  }\\n\\n\\n  /// @notice Allow to change the value stored in the Box\\n  /// @notice Only the Owner can call this function\\n  /// @dev The Alexandr N. Tetearing algorithm could increase precision\\n  /// @param newValue The new value to be stored in the box state\\n  function changeValue(string calldata newValue) public {\\n    require(!shouldRevert, \\\"Set to revert\\\");\\n    value = newValue;\\n    emit ColorChanged(newValue);\\n  }\\n\\n  /// @notice Allow to change the value stored in the Box\\n  /// @notice Only the Owner can call this function\\n  /// @dev The Alexandr N. Tetearing algorithm could increase precision\\n  /// @param newValue The new value to be stored in the box state\\n  function changeValueOwner(string calldata newValue) public onlyOwner {\\n    value = newValue;\\n    emit ColorChanged(newValue);\\n  }\\n\\n  /// @notice Allow to simulate changing the value stored in the Box\\n  /// @dev The Alexandr N. Tetearing algorithm could increase precision\\n  /// @param newValue The new value to be stored in the box state\\n  /// @custom:event-only This function simply emit an event.\\n  function changeColorDryRun(string calldata newValue) public {\\n    emit ColorChanged(newValue);\\n  }\\n\\n  /// @notice Returns current value in the box.\\n  /// @dev Returns only a string.\\n  /// @return The current value of in the box state\\n  function getValue() public view returns (string memory) {\\n    require(!shouldRevert, \\\"Set to revert\\\");\\n    return value;\\n  }\\n\\n  /// @notice Returns current version of the contract.\\n  /// @dev Returns only a string.\\n  /// @return The current version of the contract\\n  function getVersion() virtual public pure returns (string memory) {\\n    return \\\"V1\\\";\\n  }\\n}\\n\",\"keccak256\":\"0x5d45fc77db6114e55f1b69bdd83ba643c9d08e894724d5445d012a0e2fc8910a\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50604051620009ac380380620009ac8339810160408190526100319161015d565b61003a3361005e565b805161004d9060019060208401906100ae565b50506002805460ff19169055610267565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b8280546100ba9061022c565b90600052602060002090601f0160209004810192826100dc5760008555610122565b82601f106100f557805160ff1916838001178555610122565b82800160010185558215610122579182015b82811115610122578251825591602001919060010190610107565b5061012e929150610132565b5090565b5b8082111561012e5760008155600101610133565b634e487b7160e01b600052604160045260246000fd5b6000602080838503121561017057600080fd5b82516001600160401b038082111561018757600080fd5b818501915085601f83011261019b57600080fd5b8151818111156101ad576101ad610147565b604051601f8201601f19908116603f011681019083821181831017156101d5576101d5610147565b8160405282815288868487010111156101ed57600080fd5b600093505b8284101561020f57848401860151818501870152928501926101f2565b828411156102205760008684830101525b98975050505050505050565b600181811c9082168061024057607f821691505b6020821081141561026157634e487b7160e01b600052602260045260246000fd5b50919050565b61073580620002776000396000f3fe608060405234801561001057600080fd5b506004361061009e5760003560e01c80638da5cb5b116100665780638da5cb5b14610100578063ac7a25ee1461011b578063d3072d821461012e578063e3a07ac01461014b578063f2fde38b1461015e57600080fd5b80630d8e6e2c146100a3578063142c9eb5146100d357806320965255146100dd578063715018a6146100e55780638d73fe89146100ed575b600080fd5b604080518082019091526002815261563160f01b60208201525b6040516100ca9190610569565b60405180910390f35b6100db610171565b005b6100bd6101f1565b6100db6102c7565b6100db6100fb3660046105be565b6102fd565b6000546040516001600160a01b0390911681526020016100ca565b6100db6101293660046105be565b610371565b60025461013b9060ff1681565b60405190151581526020016100ca565b6100db6101593660046105be565b6103a2565b6100db61016c366004610630565b6103e5565b6000546001600160a01b031633146101a45760405162461bcd60e51b815260040161019b90610660565b60405180910390fd5b6002805460ff8082161560ff1990921682179092556040519116151581527f88e95cf2f314e458491f98f3be8f296ee704bfc5b2cbeddcda73b61d44c9060b9060200160405180910390a1565b60025460609060ff16156102375760405162461bcd60e51b815260206004820152600d60248201526c14d95d081d1bc81c995d995c9d609a1b604482015260640161019b565b6001805461024490610695565b80601f016020809104026020016040519081016040528092919081815260200182805461027090610695565b80156102bd5780601f10610292576101008083540402835291602001916102bd565b820191906000526020600020905b8154815290600101906020018083116102a057829003601f168201915b5050505050905090565b6000546001600160a01b031633146102f15760405162461bcd60e51b815260040161019b90610660565b6102fb6000610480565b565b6000546001600160a01b031633146103275760405162461bcd60e51b815260040161019b90610660565b610333600183836104d0565b507fea8482eb24fdcbd88250f9fd14644f201467fcaf3c5f08a0675ed9d46977ae3b82826040516103659291906106d0565b60405180910390a15050565b7fea8482eb24fdcbd88250f9fd14644f201467fcaf3c5f08a0675ed9d46977ae3b82826040516103659291906106d0565b60025460ff16156103275760405162461bcd60e51b815260206004820152600d60248201526c14d95d081d1bc81c995d995c9d609a1b604482015260640161019b565b6000546001600160a01b0316331461040f5760405162461bcd60e51b815260040161019b90610660565b6001600160a01b0381166104745760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b606482015260840161019b565b61047d81610480565b50565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b8280546104dc90610695565b90600052602060002090601f0160209004810192826104fe5760008555610544565b82601f106105175782800160ff19823516178555610544565b82800160010185558215610544579182015b82811115610544578235825591602001919060010190610529565b50610550929150610554565b5090565b5b808211156105505760008155600101610555565b600060208083528351808285015260005b818110156105965785810183015185820160400152820161057a565b818111156105a8576000604083870101525b50601f01601f1916929092016040019392505050565b600080602083850312156105d157600080fd5b823567ffffffffffffffff808211156105e957600080fd5b818501915085601f8301126105fd57600080fd5b81358181111561060c57600080fd5b86602082850101111561061e57600080fd5b60209290920196919550909350505050565b60006020828403121561064257600080fd5b81356001600160a01b038116811461065957600080fd5b9392505050565b6020808252818101527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604082015260600190565b600181811c908216806106a957607f821691505b602082108114156106ca57634e487b7160e01b600052602260045260246000fd5b50919050565b60208152816020820152818360408301376000818301604090810191909152601f909201601f1916010191905056fea2646970667358221220b885d1aa0abe4824310807f9bb6193b729dff5373d7ede0aa2ac23a0fad7c97664736f6c63430008090033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061009e5760003560e01c80638da5cb5b116100665780638da5cb5b14610100578063ac7a25ee1461011b578063d3072d821461012e578063e3a07ac01461014b578063f2fde38b1461015e57600080fd5b80630d8e6e2c146100a3578063142c9eb5146100d357806320965255146100dd578063715018a6146100e55780638d73fe89146100ed575b600080fd5b604080518082019091526002815261563160f01b60208201525b6040516100ca9190610569565b60405180910390f35b6100db610171565b005b6100bd6101f1565b6100db6102c7565b6100db6100fb3660046105be565b6102fd565b6000546040516001600160a01b0390911681526020016100ca565b6100db6101293660046105be565b610371565b60025461013b9060ff1681565b60405190151581526020016100ca565b6100db6101593660046105be565b6103a2565b6100db61016c366004610630565b6103e5565b6000546001600160a01b031633146101a45760405162461bcd60e51b815260040161019b90610660565b60405180910390fd5b6002805460ff8082161560ff1990921682179092556040519116151581527f88e95cf2f314e458491f98f3be8f296ee704bfc5b2cbeddcda73b61d44c9060b9060200160405180910390a1565b60025460609060ff16156102375760405162461bcd60e51b815260206004820152600d60248201526c14d95d081d1bc81c995d995c9d609a1b604482015260640161019b565b6001805461024490610695565b80601f016020809104026020016040519081016040528092919081815260200182805461027090610695565b80156102bd5780601f10610292576101008083540402835291602001916102bd565b820191906000526020600020905b8154815290600101906020018083116102a057829003601f168201915b5050505050905090565b6000546001600160a01b031633146102f15760405162461bcd60e51b815260040161019b90610660565b6102fb6000610480565b565b6000546001600160a01b031633146103275760405162461bcd60e51b815260040161019b90610660565b610333600183836104d0565b507fea8482eb24fdcbd88250f9fd14644f201467fcaf3c5f08a0675ed9d46977ae3b82826040516103659291906106d0565b60405180910390a15050565b7fea8482eb24fdcbd88250f9fd14644f201467fcaf3c5f08a0675ed9d46977ae3b82826040516103659291906106d0565b60025460ff16156103275760405162461bcd60e51b815260206004820152600d60248201526c14d95d081d1bc81c995d995c9d609a1b604482015260640161019b565b6000546001600160a01b0316331461040f5760405162461bcd60e51b815260040161019b90610660565b6001600160a01b0381166104745760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b606482015260840161019b565b61047d81610480565b50565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b8280546104dc90610695565b90600052602060002090601f0160209004810192826104fe5760008555610544565b82601f106105175782800160ff19823516178555610544565b82800160010185558215610544579182015b82811115610544578235825591602001919060010190610529565b50610550929150610554565b5090565b5b808211156105505760008155600101610555565b600060208083528351808285015260005b818110156105965785810183015185820160400152820161057a565b818111156105a8576000604083870101525b50601f01601f1916929092016040019392505050565b600080602083850312156105d157600080fd5b823567ffffffffffffffff808211156105e957600080fd5b818501915085601f8301126105fd57600080fd5b81358181111561060c57600080fd5b86602082850101111561061e57600080fd5b60209290920196919550909350505050565b60006020828403121561064257600080fd5b81356001600160a01b038116811461065957600080fd5b9392505050565b6020808252818101527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604082015260600190565b600181811c908216806106a957607f821691505b602082108114156106ca57634e487b7160e01b600052602260045260246000fd5b50919050565b60208152816020820152818360408301376000818301604090810191909152601f909201601f1916010191905056fea2646970667358221220b885d1aa0abe4824310807f9bb6193b729dff5373d7ede0aa2ac23a0fad7c97664736f6c63430008090033",
+  "devdoc": {
+    "author": "Mr Tumeric A. Gardner",
+    "custom:experimental": "This is an experimental contract.",
+    "details": "All function calls are currently implemented without..",
+    "kind": "dev",
+    "methods": {
+      "changeColorDryRun(string)": {
+        "custom:event-only": "This function simply emit an event.",
+        "details": "The Alexandr N. Tetearing algorithm could increase precision",
+        "params": {
+          "newValue": "The new value to be stored in the box state"
+        }
+      },
+      "changeValue(string)": {
+        "details": "The Alexandr N. Tetearing algorithm could increase precision",
+        "params": {
+          "newValue": "The new value to be stored in the box state"
+        }
+      },
+      "changeValueOwner(string)": {
+        "details": "The Alexandr N. Tetearing algorithm could increase precision",
+        "params": {
+          "newValue": "The new value to be stored in the box state"
+        }
+      },
+      "getValue()": {
+        "details": "Returns only a string.",
+        "returns": {
+          "_0": "The current value of in the box state"
+        }
+      },
+      "getVersion()": {
+        "details": "Returns only a string.",
+        "returns": {
+          "_0": "The current version of the contract"
+        }
+      },
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    },
+    "title": "A box containing some value",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "changeColorDryRun(string)": {
+        "notice": "Allow to simulate changing the value stored in the Box"
+      },
+      "changeValue(string)": {
+        "notice": "Allow to change the value stored in the BoxOnly the Owner can call this function"
+      },
+      "changeValueOwner(string)": {
+        "notice": "Allow to change the value stored in the BoxOnly the Owner can call this function"
+      },
+      "getValue()": {
+        "notice": "Returns current value in the box."
+      },
+      "getVersion()": {
+        "notice": "Returns current version of the contract."
+      }
+    },
+    "notice": "You can use this contract for only the most basic simulation",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 389,
+        "contract": "contracts/Box.sol:Box",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 5937,
+        "contract": "contracts/Box.sol:Box",
+        "label": "value",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_string_storage"
+      },
+      {
+        "astId": 5939,
+        "contract": "contracts/Box.sol:Box",
+        "label": "shouldRevert",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_bool"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_string_storage": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

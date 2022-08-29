@@ -1,0 +1,288 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0xdE6906d533006539e0421F35376f4eb723E00a24",
+    "txHash": "0x05d4d63056698d72d26d960c0487680878d38362be927e35ac7218e502bdee67"
+  },
+  "proxies": [
+    {
+      "address": "0x2CD6d29f9c1A6241827FC40844956eC42ae91BDF",
+      "txHash": "0x50fc3e784bc47150cfbdd5a9116b38a58ce4d2c8854a2e56e5f551284f0a2028",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x642D9B366E3AD2b646cfdDDdbB0Bc3082af9243b",
+      "txHash": "0x52f471784ca0e0103f3ac99129d5b79cdc707eee75f0fa0913f50c35129d0c66",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xD960fB76A52656Bf028AA5BAf9205765a2E8fF85",
+      "txHash": "0x0fb51eb586a432ce9500453786f5199061d727648443cfaacdc22db372afe3d7",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x9453C0cF0acA20c145Bc0dF902f3d9Cf042dBDaC",
+      "txHash": "0x8dfb7c54ea9f342d05c88359e372b9143909b3fd9153148af09c8a5ac557a383",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x89e60d1cCf574Ea99974b9ce88E31A682d5eeFcc",
+      "txHash": "0x69f9995a38a45aaad9796339b0957049049cddf3fd213c300952759c9642f28a",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x0C99ab490C6B59d85d871c1E532A8394E1725859",
+      "txHash": "0xef33e450041702ab92a8f4105b2b2948b19fa8bfa406a8494ea1b7d8e49b0209",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x1F19F4259601988Da5ff2b5fc52Ac5394aCBbf15",
+      "txHash": "0x9b30d818c0b0e84b5e7ccb72a6c33cd8bbed5508211cf80b8d5b44e52b831ccb",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xF4b5ec10773DADE38EFb80994385A847F4edd23C",
+      "txHash": "0xdf464866dfc4054e46ddd53bfb9f19b97a2b769433c6c91327591f67ea9b31e0",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x67E26b52203dF6c86d39cf8FD9865a2815A2e379",
+      "txHash": "0x350ca25d23bc6cbfbeefbc761659f5cc0511e088df521dd2e7695205ce52733d",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x6B4cF38fC2d2CE5C16af3e648D18b7C7b8EA5dD9",
+      "txHash": "0x0fa1f0c714df9af4ee26ca8a976f317e7f0b90ca0e8e9d6f367106cbed70491a",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x859264a627bB6c91a9769cdD0e3f259dc8357b70",
+      "txHash": "0x1c0700b52d943790d739564b141fbf8aa514dea14a40829d8613d96eabb87412",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "edd2b31bdea0d831d281293e58d9c56756992471a07ba45f72178fbe7e07d1e3": {
+      "address": "0x966612d37a6484a703F3d75D71729d6C59888c58",
+      "txHash": "0x763a900519d1d28658a7a471e62505dc66e79f57e44f20e41ab0ac99fa702ca7",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "color",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_string_storage",
+            "contract": "ColorBoxV1",
+            "src": "contracts/ColorBoxV1.sol:14"
+          },
+          {
+            "label": "shouldRevert",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_bool",
+            "contract": "ColorBoxV1",
+            "src": "contracts/ColorBoxV1.sol:15"
+          },
+          {
+            "label": "testMapping",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_mapping(t_string_memory_ptr,t_uint256)",
+            "contract": "ColorBoxV1",
+            "src": "contracts/ColorBoxV1.sol:16"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_string_memory_ptr,t_uint256)": {
+            "label": "mapping(string => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "12480f1b1884f503b79df66fd013400a0ba74ff474813bdc597fe6dab7b2257f": {
+      "address": "0x9c97CBA3Ec35d4448f771F85096F7d5AdB608AD7",
+      "txHash": "0x912bb4445fc44282982911c2712f88f2d70eea8a40a78799374a10144de2846e",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "color",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_string_storage",
+            "contract": "ColorBoxV1",
+            "src": "contracts/ColorBoxV1.sol:14"
+          },
+          {
+            "label": "shouldRevert",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_bool",
+            "contract": "ColorBoxV1",
+            "src": "contracts/ColorBoxV1.sol:15"
+          },
+          {
+            "label": "testMapping",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_mapping(t_string_memory_ptr,t_uint256)",
+            "contract": "ColorBoxV1",
+            "src": "contracts/ColorBoxV1.sol:16"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_string_memory_ptr,t_uint256)": {
+            "label": "mapping(string => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import { AccountId, PrivateKey, Client, Hbar } from "@hashgraph/sdk"
 import { Wallet, providers } from "ethers"
 import hardhatConfig from "../../hardhat.config"
-import { contractCallQuery, getBalanceQuery, transferTransaction } from "./hedera-transactions"
+import { hederaExecutors } from "./hedera-transactions"
 
 type HederaNetworkType = "mainnet" | "testnet"
 
@@ -25,20 +25,6 @@ type OperatorConfig = {
   etherAliasAccount: AccountId
   hederaClient: Client
 } & ReturnType<typeof hederaExecutors>
-
-const executeWithHederaClient =
-  (hederaClient: Client) =>
-  <TFunction extends (...args: any) => any>(hederaTransactionToExecute: TFunction) =>
-  (...otherArguments: Parameters<TFunction>): ReturnType<TFunction> =>
-    //@ts-expect-error
-    hederaTransactionToExecute(...otherArguments).execute(hederaClient)
-
-export const hederaExecutors = (hederaClient: Client) => ({
-  transferTransaction: transferTransaction(hederaClient),
-  getBalanceQuery: getBalanceQuery(hederaClient),
-  contractCallQuery: contractCallQuery(hederaClient),
-  hederaExecutor: executeWithHederaClient(hederaClient),
-})
 
 const getHederaHardhatConfig = (hederaNetwork: string | undefined = "hederatest") => {
   const { hederaAccounts, type: networkType } = hardhatConfig?.networks?.[

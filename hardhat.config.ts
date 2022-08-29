@@ -86,8 +86,8 @@ const hardhatConfig: HardhatUserConfig = {
       },
     },
     hederatest: {
-      url: "https://testnet.hashio.io/api",
-      // url: "http://localhost:7546/api",
+      // url: "https://testnet.hashio.io/api",
+      url: "http://localhost:7546/api",
       chainId: 296,
       accounts: [process.env.ETHERS_PRIVATE_KEY as string],
       //@ts-expect-error

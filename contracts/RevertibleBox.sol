@@ -40,6 +40,11 @@ contract RevertibleBox is Ownable {
     require(false, "Call has been reverted!");
   }
 
+  function changeValueNoRevert(string calldata newValue) public {
+    value = newValue;
+    emit ValueChanged(newValue);
+  }
+
   /// @notice Allow to change the value stored in the Box
   /// @notice Only the Owner can call this function
   /// @dev The Alexandr N. Tetearing algorithm could increase precision

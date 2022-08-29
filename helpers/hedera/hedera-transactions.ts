@@ -6,6 +6,7 @@ import {
   AccountBalanceQuery,
   ContractCallQuery,
   ContractFunctionParameters,
+  AccountInfoQuery,
 } from "@hashgraph/sdk"
 
 export const transferTransaction =
@@ -19,7 +20,7 @@ export const transferTransaction =
     ).getReceipt(hederaClient)
   }
 
-export const getBalanceQuery = (hederaClient: Client) => (accountId: AccountId) =>
+export const getBalanceQuery = (hederaClient: Client) => (accountId: AccountId | string) =>
   new AccountBalanceQuery().setAccountId(accountId).execute(hederaClient)
 
 export const contractCallQuery =
@@ -30,3 +31,13 @@ export const contractCallQuery =
       .setGas(200_000)
       .setFunction(functionName, functionParameters)
       .execute(hederaClient)
+
+export const getAccountQuery = (hederaClient: Client) => (accountId: AccountId | string) =>
+  new AccountInfoQuery().setAccountId(accountId).execute(hederaClient)
+
+export const hederaExecutors = (hederaClient: Client) => ({
+  getAccountQuery: getAccountQuery(hederaClient),
+  transferTransaction: transferTransaction(hederaClient),
+  getBalanceQuery: getBalanceQuery(hederaClient),
+  contractCallQuery: contractCallQuery(hederaClient),
+})

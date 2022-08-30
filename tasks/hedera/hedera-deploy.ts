@@ -6,7 +6,7 @@ task("hedera-deploy").setAction(
   async (noArguments, { ethers, hardhatArguments: { network }, deployments: { deploy } }) => {
     const { hederaClient } = getHederaClientAndAccounts(network)
 
-    const featureContract = await ethers.getContractFactory("Box")
+    const featureContract = await ethers.getContractFactory("RevertibleBox")
 
     const deployedContract = await new ContractCreateFlow()
       .setGas(200000)

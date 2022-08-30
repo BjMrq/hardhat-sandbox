@@ -32,6 +32,7 @@ export interface ColorBoxV1Interface extends utils.Interface {
     "changeColorCouldRevert(string)": FunctionFragment;
     "changeColorDryRun(string)": FunctionFragment;
     "changeColorOwner(string)": FunctionFragment;
+    "changeValueNoRevert(string)": FunctionFragment;
     "getColor()": FunctionFragment;
     "getMapping(string)": FunctionFragment;
     "getVersion()": FunctionFragment;
@@ -39,6 +40,7 @@ export interface ColorBoxV1Interface extends utils.Interface {
     "owner()": FunctionFragment;
     "renounceOwnership()": FunctionFragment;
     "shouldRevert()": FunctionFragment;
+    "switchShouldRevert()": FunctionFragment;
     "testMapping(string)": FunctionFragment;
     "testRevert()": FunctionFragment;
     "transferOwnership(address)": FunctionFragment;
@@ -50,6 +52,7 @@ export interface ColorBoxV1Interface extends utils.Interface {
       | "changeColorCouldRevert"
       | "changeColorDryRun"
       | "changeColorOwner"
+      | "changeValueNoRevert"
       | "getColor"
       | "getMapping"
       | "getVersion"
@@ -57,6 +60,7 @@ export interface ColorBoxV1Interface extends utils.Interface {
       | "owner"
       | "renounceOwnership"
       | "shouldRevert"
+      | "switchShouldRevert"
       | "testMapping"
       | "testRevert"
       | "transferOwnership"
@@ -73,6 +77,10 @@ export interface ColorBoxV1Interface extends utils.Interface {
   ): string;
   encodeFunctionData(
     functionFragment: "changeColorOwner",
+    values: [PromiseOrValue<string>]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "changeValueNoRevert",
     values: [PromiseOrValue<string>]
   ): string;
   encodeFunctionData(functionFragment: "getColor", values?: undefined): string;
@@ -95,6 +103,10 @@ export interface ColorBoxV1Interface extends utils.Interface {
   ): string;
   encodeFunctionData(
     functionFragment: "shouldRevert",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "switchShouldRevert",
     values?: undefined
   ): string;
   encodeFunctionData(
@@ -126,6 +138,10 @@ export interface ColorBoxV1Interface extends utils.Interface {
     functionFragment: "changeColorOwner",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(
+    functionFragment: "changeValueNoRevert",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "getColor", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "getMapping", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "getVersion", data: BytesLike): Result;
@@ -137,6 +153,10 @@ export interface ColorBoxV1Interface extends utils.Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "shouldRevert",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "switchShouldRevert",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -157,11 +177,13 @@ export interface ColorBoxV1Interface extends utils.Interface {
     "ColorChanged(string)": EventFragment;
     "Initialized(uint8)": EventFragment;
     "OwnershipTransferred(address,address)": EventFragment;
+    "ShouldRevertChanged(bool)": EventFragment;
   };
 
   getEvent(nameOrSignatureOrTopic: "ColorChanged"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "Initialized"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "OwnershipTransferred"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "ShouldRevertChanged"): EventFragment;
 }
 
 export interface ColorChangedEventObject {
@@ -189,6 +211,17 @@ export type OwnershipTransferredEvent = TypedEvent<
 
 export type OwnershipTransferredEventFilter =
   TypedEventFilter<OwnershipTransferredEvent>;
+
+export interface ShouldRevertChangedEventObject {
+  newValue: boolean;
+}
+export type ShouldRevertChangedEvent = TypedEvent<
+  [boolean],
+  ShouldRevertChangedEventObject
+>;
+
+export type ShouldRevertChangedEventFilter =
+  TypedEventFilter<ShouldRevertChangedEvent>;
 
 export interface ColorBoxV1 extends BaseContract {
   connect(signerOrProvider: Signer | Provider | string): this;
@@ -232,6 +265,11 @@ export interface ColorBoxV1 extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
+    changeValueNoRevert(
+      newValue: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
     getColor(overrides?: CallOverrides): Promise<[string]>;
 
     getMapping(
@@ -253,6 +291,10 @@ export interface ColorBoxV1 extends BaseContract {
     ): Promise<ContractTransaction>;
 
     shouldRevert(overrides?: CallOverrides): Promise<[boolean]>;
+
+    switchShouldRevert(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
 
     testMapping(
       arg0: PromiseOrValue<string>,
@@ -288,6 +330,11 @@ export interface ColorBoxV1 extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
+  changeValueNoRevert(
+    newValue: PromiseOrValue<string>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
   getColor(overrides?: CallOverrides): Promise<string>;
 
   getMapping(
@@ -309,6 +356,10 @@ export interface ColorBoxV1 extends BaseContract {
   ): Promise<ContractTransaction>;
 
   shouldRevert(overrides?: CallOverrides): Promise<boolean>;
+
+  switchShouldRevert(
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
 
   testMapping(
     arg0: PromiseOrValue<string>,
@@ -344,6 +395,11 @@ export interface ColorBoxV1 extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
+    changeValueNoRevert(
+      newValue: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
     getColor(overrides?: CallOverrides): Promise<string>;
 
     getMapping(
@@ -363,6 +419,8 @@ export interface ColorBoxV1 extends BaseContract {
     renounceOwnership(overrides?: CallOverrides): Promise<void>;
 
     shouldRevert(overrides?: CallOverrides): Promise<boolean>;
+
+    switchShouldRevert(overrides?: CallOverrides): Promise<void>;
 
     testMapping(
       arg0: PromiseOrValue<string>,
@@ -398,6 +456,11 @@ export interface ColorBoxV1 extends BaseContract {
       previousOwner?: PromiseOrValue<string> | null,
       newOwner?: PromiseOrValue<string> | null
     ): OwnershipTransferredEventFilter;
+
+    "ShouldRevertChanged(bool)"(
+      newValue?: null
+    ): ShouldRevertChangedEventFilter;
+    ShouldRevertChanged(newValue?: null): ShouldRevertChangedEventFilter;
   };
 
   estimateGas: {
@@ -413,6 +476,11 @@ export interface ColorBoxV1 extends BaseContract {
 
     changeColorOwner(
       newColor: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    changeValueNoRevert(
+      newValue: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
@@ -437,6 +505,10 @@ export interface ColorBoxV1 extends BaseContract {
     ): Promise<BigNumber>;
 
     shouldRevert(overrides?: CallOverrides): Promise<BigNumber>;
+
+    switchShouldRevert(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
 
     testMapping(
       arg0: PromiseOrValue<string>,
@@ -473,6 +545,11 @@ export interface ColorBoxV1 extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
+    changeValueNoRevert(
+      newValue: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
     getColor(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     getMapping(
@@ -494,6 +571,10 @@ export interface ColorBoxV1 extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     shouldRevert(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    switchShouldRevert(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
 
     testMapping(
       arg0: PromiseOrValue<string>,

@@ -14,7 +14,6 @@ contract RevertibleBox is Ownable {
   bool public shouldRevert;
   mapping (string => uint) public testMapping;
 
-  // Emitted when the stored value changes
   event ValueChanged(string newValue);
   event ShouldRevertChanged(bool newValue);
 
@@ -34,10 +33,6 @@ contract RevertibleBox is Ownable {
 
   function getMapping(string memory _testKey) public view returns (uint) {
     return testMapping[_testKey];
-  }
-
-  function testRevert() pure public {
-    require(false, "Call has been reverted!");
   }
 
   function changeValueNoRevert(string calldata newValue) public {

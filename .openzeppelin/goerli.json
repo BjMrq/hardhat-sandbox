@@ -64,6 +64,11 @@
       "address": "0x77781c3fCe14D8922B51b613464546a3A5E88208",
       "txHash": "0xd0f35f67ad3cdf40512777ba48b03bd3e4768fef5ab41db89518d4e0be91dc7a",
       "kind": "transparent"
+    },
+    {
+      "address": "0x1356AC4133d40bf8acF28fb1736642D896e37E25",
+      "txHash": "0xafeb89bd28d323bc17dd9116dda66b19be0ac4b109a48f2cdd2a7d8885bfe901",
+      "kind": "transparent"
     }
   ],
   "impls": {
@@ -181,6 +186,117 @@
     "12480f1b1884f503b79df66fd013400a0ba74ff474813bdc597fe6dab7b2257f": {
       "address": "0x9c97CBA3Ec35d4448f771F85096F7d5AdB608AD7",
       "txHash": "0x912bb4445fc44282982911c2712f88f2d70eea8a40a78799374a10144de2846e",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "color",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_string_storage",
+            "contract": "ColorBoxV1",
+            "src": "contracts/ColorBoxV1.sol:14"
+          },
+          {
+            "label": "shouldRevert",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_bool",
+            "contract": "ColorBoxV1",
+            "src": "contracts/ColorBoxV1.sol:15"
+          },
+          {
+            "label": "testMapping",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_mapping(t_string_memory_ptr,t_uint256)",
+            "contract": "ColorBoxV1",
+            "src": "contracts/ColorBoxV1.sol:16"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_string_memory_ptr,t_uint256)": {
+            "label": "mapping(string => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "3be9cd882e50b2c60ed16daeceb31eea96f6640e0b1d07b3c1f55c4da2acd76d": {
+      "address": "0xfda68D2CA4F331F109f45B0E4AE3473144B30c74",
+      "txHash": "0x32a301930503f33a1b583033bd6a2157c6bc463720dcea618c0b0ab0d3db5dd2",
       "layout": {
         "storage": [
           {

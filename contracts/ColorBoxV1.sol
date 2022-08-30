@@ -16,8 +16,8 @@ contract ColorBoxV1 is Initializable, OwnableUpgradeable {
   mapping (string => uint) public testMapping;
 
 
-  // Emitted when the stored value changes
   event ColorChanged(string newValue);
+  event ShouldRevertChanged(bool newValue);
 
   function initialize(string memory initialColor) public initializer {
     __Context_init();
@@ -36,6 +36,16 @@ contract ColorBoxV1 is Initializable, OwnableUpgradeable {
 
   function testRevert() pure public {
     require(false, "Call has been reverted!");
+  }
+
+  function switchShouldRevert() public onlyOwner {
+    shouldRevert = !shouldRevert;
+    emit ShouldRevertChanged(shouldRevert);
+  }
+
+  function changeValueNoRevert(string calldata newValue) public {
+    color = newValue;
+    emit ColorChanged(newValue);
   }
 
 

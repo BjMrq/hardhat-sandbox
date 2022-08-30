@@ -31,6 +31,7 @@ export interface RevertibleBoxInterface extends utils.Interface {
   functions: {
     "changeValueCouldRevert(string)": FunctionFragment;
     "changeValueDryRun(string)": FunctionFragment;
+    "changeValueNoRevert(string)": FunctionFragment;
     "changeValueOwner(string)": FunctionFragment;
     "getMapping(string)": FunctionFragment;
     "getValue()": FunctionFragment;
@@ -40,7 +41,6 @@ export interface RevertibleBoxInterface extends utils.Interface {
     "shouldRevert()": FunctionFragment;
     "switchShouldRevert()": FunctionFragment;
     "testMapping(string)": FunctionFragment;
-    "testRevert()": FunctionFragment;
     "transferOwnership(address)": FunctionFragment;
     "updateMapping(string,uint256)": FunctionFragment;
   };
@@ -49,6 +49,7 @@ export interface RevertibleBoxInterface extends utils.Interface {
     nameOrSignatureOrTopic:
       | "changeValueCouldRevert"
       | "changeValueDryRun"
+      | "changeValueNoRevert"
       | "changeValueOwner"
       | "getMapping"
       | "getValue"
@@ -58,7 +59,6 @@ export interface RevertibleBoxInterface extends utils.Interface {
       | "shouldRevert"
       | "switchShouldRevert"
       | "testMapping"
-      | "testRevert"
       | "transferOwnership"
       | "updateMapping"
   ): FunctionFragment;
@@ -69,6 +69,10 @@ export interface RevertibleBoxInterface extends utils.Interface {
   ): string;
   encodeFunctionData(
     functionFragment: "changeValueDryRun",
+    values: [PromiseOrValue<string>]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "changeValueNoRevert",
     values: [PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
@@ -102,10 +106,6 @@ export interface RevertibleBoxInterface extends utils.Interface {
     values: [PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
-    functionFragment: "testRevert",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
     functionFragment: "transferOwnership",
     values: [PromiseOrValue<string>]
   ): string;
@@ -120,6 +120,10 @@ export interface RevertibleBoxInterface extends utils.Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "changeValueDryRun",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "changeValueNoRevert",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -146,7 +150,6 @@ export interface RevertibleBoxInterface extends utils.Interface {
     functionFragment: "testMapping",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "testRevert", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "transferOwnership",
     data: BytesLike
@@ -234,6 +237,11 @@ export interface RevertibleBox extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
+    changeValueNoRevert(
+      newValue: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
     changeValueOwner(
       newValue: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -265,8 +273,6 @@ export interface RevertibleBox extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
-    testRevert(overrides?: CallOverrides): Promise<[void]>;
-
     transferOwnership(
       newOwner: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -285,6 +291,11 @@ export interface RevertibleBox extends BaseContract {
   ): Promise<ContractTransaction>;
 
   changeValueDryRun(
+    newValue: PromiseOrValue<string>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  changeValueNoRevert(
     newValue: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
@@ -320,8 +331,6 @@ export interface RevertibleBox extends BaseContract {
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
-  testRevert(overrides?: CallOverrides): Promise<void>;
-
   transferOwnership(
     newOwner: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -340,6 +349,11 @@ export interface RevertibleBox extends BaseContract {
     ): Promise<void>;
 
     changeValueDryRun(
+      newValue: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    changeValueNoRevert(
       newValue: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
@@ -370,8 +384,6 @@ export interface RevertibleBox extends BaseContract {
       arg0: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
-
-    testRevert(overrides?: CallOverrides): Promise<void>;
 
     transferOwnership(
       newOwner: PromiseOrValue<string>,
@@ -415,6 +427,11 @@ export interface RevertibleBox extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
+    changeValueNoRevert(
+      newValue: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
     changeValueOwner(
       newValue: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -446,8 +463,6 @@ export interface RevertibleBox extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    testRevert(overrides?: CallOverrides): Promise<BigNumber>;
-
     transferOwnership(
       newOwner: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -467,6 +482,11 @@ export interface RevertibleBox extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     changeValueDryRun(
+      newValue: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    changeValueNoRevert(
       newValue: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
@@ -501,8 +521,6 @@ export interface RevertibleBox extends BaseContract {
       arg0: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
-
-    testRevert(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     transferOwnership(
       newOwner: PromiseOrValue<string>,

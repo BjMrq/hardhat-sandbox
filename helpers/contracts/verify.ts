@@ -24,7 +24,7 @@ const buildVerifyLogInfo = (
   contractAddress: string
 ) => `running ${verifierTaskName} for ${contractName} deployed at ${contractAddress}:`
 
-const avoidNoBytecodeError = async () => await sleep(20000)
+const avoidNoBytecodeError = async () => await sleep(40000)
 
 const verifyContractWith =
   (verifierTaskName: VerificationTaskNames) =>

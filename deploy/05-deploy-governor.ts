@@ -1,14 +1,16 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types"
 import { DeployFunction } from "hardhat-deploy/types"
 import { simpleContractDeployAndVerify } from "../helpers/contracts/deploy"
-import { sleep } from "../helpers/chain/wait-block"
+import { getNamedAccounts } from "hardhat"
 
-const deployColorBox: DeployFunction = async ({}: HardhatRuntimeEnvironment) => {
+const deployColorBox: DeployFunction = async ({
+  ethers: { provider },
+}: HardhatRuntimeEnvironment) => {
   await simpleContractDeployAndVerify({
     contractName: "DummyGovernor",
     deploymentArguments: [],
     deploymentOptions: {
-      gasLimit: "10000000",
+      gasLimit: "8000000",
     },
   })
 }

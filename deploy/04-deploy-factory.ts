@@ -10,10 +10,9 @@ const deployColorBox: DeployFunction = async ({
     contractName: "BoxFactory",
     deploymentArguments: [],
   })
-
   const contractFactory = await getContractAt<BoxFactory>("BoxFactory", deployedFactory.address)
 
-  await contractFactory.createNewBox("factored")
+  await (await contractFactory.createNewBox("factored")).wait(6)
 }
 
 deployColorBox.tags = ["all", "Box"]

@@ -72,6 +72,8 @@ export type { ColorBoxV2 } from "./contracts/ColorBoxV2";
 export { ColorBoxV2__factory } from "./factories/contracts/ColorBoxV2__factory";
 export type { DaoNat } from "./contracts/DaoNat";
 export { DaoNat__factory } from "./factories/contracts/DaoNat__factory";
+export type { DummyGovernor } from "./contracts/DummyGovernor";
+export { DummyGovernor__factory } from "./factories/contracts/DummyGovernor__factory";
 export type { BoxFactory } from "./contracts/FactoredBox.sol/BoxFactory";
 export { BoxFactory__factory } from "./factories/contracts/FactoredBox.sol/BoxFactory__factory";
 export type { FactoredBox } from "./contracts/FactoredBox.sol/FactoredBox";

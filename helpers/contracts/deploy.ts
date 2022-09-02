@@ -10,7 +10,7 @@ type BaseToDeployOption = {
 }
 
 type ContractToDeployOption = BaseToDeployOption & {
-  deploymentOptions?: DeployOptions
+  deploymentOptions?: Omit<DeployOptions, "from">
 }
 
 type UpgradableContractToDeployOption = BaseToDeployOption & {

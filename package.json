@@ -16,6 +16,8 @@
     "script": "hardhat run --network localhost",
     "script:rinkeby": "hardhat run --network rinkeby",
     "script:arbitrum": "hardhat run --network arbitrum",
+    "script:goerli": "hardhat run --network goerli",
+    "script:hederatest": "hardhat run --network hederatest",
     "start": "hardhat node --network hardhat",
     "test": "hardhat test --network hardhat"
   },

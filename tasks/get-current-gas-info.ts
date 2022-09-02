@@ -1,8 +1,8 @@
 import { task } from "hardhat/config"
 import { type ethers } from "ethers"
 
-const getCurrentGasLimit = async (provider: ethers.providers.JsonRpcProvider) =>
-  (await provider.getBlock(await provider.getBlockNumber())).gasLimit.toNumber()
+const getCurrentGasLimit = async (provider: ethers.providers.JsonRpcProvider): Promise<string> =>
+  (await provider.getBlock(await provider.getBlockNumber())).gasLimit.toString()
 
 task("get-current-gas-info")
   .addFlag("history")

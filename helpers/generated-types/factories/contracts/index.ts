@@ -8,6 +8,7 @@ export { AccessRolesBox__factory } from "./AccessRolesBox__factory";
 export { ColorBoxV1__factory } from "./ColorBoxV1__factory";
 export { ColorBoxV2__factory } from "./ColorBoxV2__factory";
 export { DaoNat__factory } from "./DaoNat__factory";
+export { DummyGovernor__factory } from "./DummyGovernor__factory";
 export { PausableBox__factory } from "./PausableBox__factory";
 export { RevertibleBox__factory } from "./RevertibleBox__factory";
 export { SolidityFeaturesContract__factory } from "./SolidityFeaturesContract__factory";

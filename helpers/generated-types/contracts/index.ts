@@ -11,6 +11,7 @@ export type { AccessRolesBox } from "./AccessRolesBox";
 export type { ColorBoxV1 } from "./ColorBoxV1";
 export type { ColorBoxV2 } from "./ColorBoxV2";
 export type { DaoNat } from "./DaoNat";
+export type { DummyGovernor } from "./DummyGovernor";
 export type { PausableBox } from "./PausableBox";
 export type { RevertibleBox } from "./RevertibleBox";
 export type { SolidityFeaturesContract } from "./SolidityFeaturesContract";

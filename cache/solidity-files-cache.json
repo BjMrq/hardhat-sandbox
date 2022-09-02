@@ -2248,6 +2248,53 @@
       "artifacts": [
         "SolidityFeaturesContract"
       ]
+    },
+    "/home/bjmrq/code/BjMrq/Blockchain/hardhat-sandbox/contracts/DummyGovernor.sol": {
+      "lastModificationDate": 1662114158715,
+      "contentHash": "0155a3b5f52f2d88ee374e56146304bd",
+      "sourceName": "contracts/DummyGovernor.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/governance/Governor.sol",
+        "@openzeppelin/contracts/governance/extensions/GovernorSettings.sol",
+        "@openzeppelin/contracts/governance/extensions/GovernorCountingSimple.sol",
+        "@openzeppelin/contracts/governance/extensions/GovernorVotes.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "DummyGovernor"
+      ]
     }
   }
 }

@@ -7,10 +7,30 @@ import "@openzeppelin/contracts/governance/extensions/GovernorCountingSimple.sol
 import "@openzeppelin/contracts/governance/extensions/GovernorVotes.sol";
 
 contract DummyGovernor is Governor, GovernorSettings, GovernorCountingSimple {
+
+    uint256[] public proposalsId;
+
+    struct ProposalInfo {
+        address[] targets;
+        uint256[] values;
+        bytes[] calldatas;
+        string description;
+    }
+
+    mapping(uint256 => ProposalInfo) private _proposalsInfo;
+
     constructor()
         Governor("DummyGovernor")
         GovernorSettings(1 /* 1 block */, 5 /* 1 minute */, 0)
     {}
+
+    function getAllProposalsId() public view returns (uint256[] memory) {
+        return proposalsId;
+    }
+
+    function getProposal(uint256 proposalId) public view returns (ProposalInfo memory) {
+        return _proposalsInfo[proposalId];
+    }
 
     function quorum(uint256 blockNumber) public pure override returns (uint256) {
         return 0e18;
@@ -25,6 +45,20 @@ contract DummyGovernor is Governor, GovernorSettings, GovernorCountingSimple {
     }
 
     // The following functions are overrides required by Solidity.
+
+    function propose(
+        address[] memory targets,
+        uint256[] memory values,
+        bytes[] memory calldatas,
+        string memory description
+    ) public override(Governor) returns (uint256) {
+        uint256 proposalId = super.propose(targets, values, calldatas, description);
+
+        proposalsId.push(proposalId);
+        _proposalsInfo[proposalId] = ProposalInfo(targets, values, calldatas, description);
+
+        return proposalId;
+    }
 
     function votingDelay()
         public

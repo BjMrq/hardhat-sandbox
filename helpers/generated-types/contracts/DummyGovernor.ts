@@ -28,6 +28,27 @@ import type {
   PromiseOrValue,
 } from "../common";
 
+export declare namespace DummyGovernor {
+  export type ProposalInfoStruct = {
+    targets: PromiseOrValue<string>[];
+    values: PromiseOrValue<BigNumberish>[];
+    calldatas: PromiseOrValue<BytesLike>[];
+    description: PromiseOrValue<string>;
+  };
+
+  export type ProposalInfoStructOutput = [
+    string[],
+    BigNumber[],
+    string[],
+    string
+  ] & {
+    targets: string[];
+    values: BigNumber[];
+    calldatas: string[];
+    description: string;
+  };
+}
+
 export interface DummyGovernorInterface extends utils.Interface {
   functions: {
     "BALLOT_TYPEHASH()": FunctionFragment;
@@ -39,6 +60,8 @@ export interface DummyGovernorInterface extends utils.Interface {
     "castVoteWithReasonAndParams(uint256,uint8,string,bytes)": FunctionFragment;
     "castVoteWithReasonAndParamsBySig(uint256,uint8,string,bytes,uint8,bytes32,bytes32)": FunctionFragment;
     "execute(address[],uint256[],bytes[],bytes32)": FunctionFragment;
+    "getAllProposalsId()": FunctionFragment;
+    "getProposal(uint256)": FunctionFragment;
     "getVotes(address,uint256)": FunctionFragment;
     "getVotesWithParams(address,uint256,bytes)": FunctionFragment;
     "hasVoted(uint256,address)": FunctionFragment;
@@ -51,6 +74,7 @@ export interface DummyGovernorInterface extends utils.Interface {
     "proposalSnapshot(uint256)": FunctionFragment;
     "proposalThreshold()": FunctionFragment;
     "proposalVotes(uint256)": FunctionFragment;
+    "proposalsId(uint256)": FunctionFragment;
     "propose(address[],uint256[],bytes[],string)": FunctionFragment;
     "quorum(uint256)": FunctionFragment;
     "relay(address,uint256,bytes)": FunctionFragment;
@@ -75,6 +99,8 @@ export interface DummyGovernorInterface extends utils.Interface {
       | "castVoteWithReasonAndParams"
       | "castVoteWithReasonAndParamsBySig"
       | "execute"
+      | "getAllProposalsId"
+      | "getProposal"
       | "getVotes"
       | "getVotesWithParams"
       | "hasVoted"
@@ -87,6 +113,7 @@ export interface DummyGovernorInterface extends utils.Interface {
       | "proposalSnapshot"
       | "proposalThreshold"
       | "proposalVotes"
+      | "proposalsId"
       | "propose"
       | "quorum"
       | "relay"
@@ -165,6 +192,14 @@ export interface DummyGovernorInterface extends utils.Interface {
     ]
   ): string;
   encodeFunctionData(
+    functionFragment: "getAllProposalsId",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getProposal",
+    values: [PromiseOrValue<BigNumberish>]
+  ): string;
+  encodeFunctionData(
     functionFragment: "getVotes",
     values: [PromiseOrValue<string>, PromiseOrValue<BigNumberish>]
   ): string;
@@ -233,6 +268,10 @@ export interface DummyGovernorInterface extends utils.Interface {
   ): string;
   encodeFunctionData(
     functionFragment: "proposalVotes",
+    values: [PromiseOrValue<BigNumberish>]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "proposalsId",
     values: [PromiseOrValue<BigNumberish>]
   ): string;
   encodeFunctionData(
@@ -316,6 +355,14 @@ export interface DummyGovernorInterface extends utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "execute", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "getAllProposalsId",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "getProposal",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "getVotes", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "getVotesWithParams",
@@ -353,6 +400,10 @@ export interface DummyGovernorInterface extends utils.Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "proposalVotes",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "proposalsId",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "propose", data: BytesLike): Result;
@@ -602,6 +653,13 @@ export interface DummyGovernor extends BaseContract {
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
+    getAllProposalsId(overrides?: CallOverrides): Promise<[BigNumber[]]>;
+
+    getProposal(
+      proposalId: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<[DummyGovernor.ProposalInfoStructOutput]>;
+
     getVotes(
       account: PromiseOrValue<string>,
       blockNumber: PromiseOrValue<BigNumberish>,
@@ -679,6 +737,11 @@ export interface DummyGovernor extends BaseContract {
         abstainVotes: BigNumber;
       }
     >;
+
+    proposalsId(
+      arg0: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<[BigNumber]>;
 
     propose(
       targets: PromiseOrValue<string>[],
@@ -787,6 +850,13 @@ export interface DummyGovernor extends BaseContract {
     overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
+  getAllProposalsId(overrides?: CallOverrides): Promise<BigNumber[]>;
+
+  getProposal(
+    proposalId: PromiseOrValue<BigNumberish>,
+    overrides?: CallOverrides
+  ): Promise<DummyGovernor.ProposalInfoStructOutput>;
+
   getVotes(
     account: PromiseOrValue<string>,
     blockNumber: PromiseOrValue<BigNumberish>,
@@ -864,6 +934,11 @@ export interface DummyGovernor extends BaseContract {
       abstainVotes: BigNumber;
     }
   >;
+
+  proposalsId(
+    arg0: PromiseOrValue<BigNumberish>,
+    overrides?: CallOverrides
+  ): Promise<BigNumber>;
 
   propose(
     targets: PromiseOrValue<string>[],
@@ -972,6 +1047,13 @@ export interface DummyGovernor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
+    getAllProposalsId(overrides?: CallOverrides): Promise<BigNumber[]>;
+
+    getProposal(
+      proposalId: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<DummyGovernor.ProposalInfoStructOutput>;
+
     getVotes(
       account: PromiseOrValue<string>,
       blockNumber: PromiseOrValue<BigNumberish>,
@@ -1049,6 +1131,11 @@ export interface DummyGovernor extends BaseContract {
         abstainVotes: BigNumber;
       }
     >;
+
+    proposalsId(
+      arg0: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
 
     propose(
       targets: PromiseOrValue<string>[],
@@ -1248,6 +1335,13 @@ export interface DummyGovernor extends BaseContract {
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
+    getAllProposalsId(overrides?: CallOverrides): Promise<BigNumber>;
+
+    getProposal(
+      proposalId: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
     getVotes(
       account: PromiseOrValue<string>,
       blockNumber: PromiseOrValue<BigNumberish>,
@@ -1317,6 +1411,11 @@ export interface DummyGovernor extends BaseContract {
 
     proposalVotes(
       proposalId: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    proposalsId(
+      arg0: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
@@ -1430,6 +1529,13 @@ export interface DummyGovernor extends BaseContract {
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
+    getAllProposalsId(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    getProposal(
+      proposalId: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
     getVotes(
       account: PromiseOrValue<string>,
       blockNumber: PromiseOrValue<BigNumberish>,
@@ -1499,6 +1605,11 @@ export interface DummyGovernor extends BaseContract {
 
     proposalVotes(
       proposalId: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    proposalsId(
+      arg0: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 

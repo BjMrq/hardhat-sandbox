@@ -2250,8 +2250,8 @@
       ]
     },
     "/home/bjmrq/code/BjMrq/Blockchain/hardhat-sandbox/contracts/DummyGovernor.sol": {
-      "lastModificationDate": 1662114158715,
-      "contentHash": "0155a3b5f52f2d88ee374e56146304bd",
+      "lastModificationDate": 1662119206376,
+      "contentHash": "ca1dfc446230e3487219c71ecc559a1f",
       "sourceName": "contracts/DummyGovernor.sol",
       "solcConfig": {
         "version": "0.8.4",

@@ -4,7 +4,6 @@ import { simpleContractDeployAndVerify } from "../helpers/contracts/deploy"
 import { sleep } from "../helpers/chain/wait-block"
 
 const deployColorBox: DeployFunction = async ({}: HardhatRuntimeEnvironment) => {
-  await sleep(40000)
   await simpleContractDeployAndVerify({
     contractName: "DummyGovernor",
     deploymentArguments: [],

@@ -1,6 +1,7 @@
 import "./get-current-gas-info"
 import "./get-address-info"
 import "./get-logs"
+import "./get-code"
 import "./get-network-info"
 import "./get-transaction-info"
 import "./hedera/hedera-sandbox"

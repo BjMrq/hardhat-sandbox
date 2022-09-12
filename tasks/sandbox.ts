@@ -1,0 +1,12 @@
+import { task } from "hardhat/config"
+
+task("sandbox").setAction(async (noArguments, { ethers: { provider } }) => {
+  console.log(
+    (
+      await provider.estimateGas({
+        to: "0x1356AC4133d40bf8acF28fb1736642D896e37E25",
+        data: "0x0cab219a000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000037265640000000000000000000000000000000000000000000000000000000000",
+      })
+    ).toString()
+  )
+})

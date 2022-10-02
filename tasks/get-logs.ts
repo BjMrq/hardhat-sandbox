@@ -6,8 +6,6 @@ task("get-logs")
     ;(
       await provider.getLogs({
         address: address,
-        fromBlock: 0,
-        toBlock: "latest",
         topics: ["0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d"],
       })
     ).forEach((log) => console.log(log))

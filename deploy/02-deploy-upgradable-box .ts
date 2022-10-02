@@ -1,11 +1,19 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types"
 import { DeployFunction } from "hardhat-deploy/types"
-import { upgradableContractDeployAndVerify } from "../helpers/contracts/deploy"
+import {
+  upgradableContractDeployAndVerify,
+  upgradeContractAndVerify,
+} from "../helpers/contracts/deploy"
 
 const deployColorBox: DeployFunction = async ({}: HardhatRuntimeEnvironment) => {
-  await upgradableContractDeployAndVerify({
+  const ContractV1 = await upgradableContractDeployAndVerify({
     contractName: "ColorBoxV1",
     deploymentArguments: ["blue"],
+  })
+
+  const ContractV2 = await upgradeContractAndVerify({
+    nexUpgradeContractName: "ColorBoxV2",
+    currentContract: ContractV1,
   })
 }
 

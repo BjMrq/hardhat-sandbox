@@ -1,4 +1,4 @@
-import { DeployProxyOptions } from "@openzeppelin/hardhat-upgrades/dist/utils"
+import { DeployProxyOptions, UpgradeProxyOptions } from "@openzeppelin/hardhat-upgrades/dist/utils"
 import { Contract } from "ethers"
 import { getNamedAccounts, deployments, network, ethers, upgrades } from "hardhat"
 import { DeployOptions, DeployResult } from "hardhat-deploy/types"
@@ -15,6 +15,12 @@ type ContractToDeployOption = BaseToDeployOption & {
 
 type UpgradableContractToDeployOption = BaseToDeployOption & {
   deploymentOptions?: DeployProxyOptions
+}
+
+type UpgradableContractToUpgradeOption = {
+  nexUpgradeContractName: string
+  currentContract: Contract
+  upgradeOptions?: UpgradeProxyOptions
 }
 
 export const simpleContractDeployAndVerify = async ({
@@ -56,6 +62,8 @@ export const upgradableContractDeployAndVerify = async ({
     ...deploymentOptions,
   })
 
+  await deployedContract.deployed()
+
   console.log(
     `upgradable "${contractName}" (tx: ${deployedContract.deployTransaction.hash})...: deployed at ${deployedContract.address}`
   )
@@ -68,4 +76,36 @@ export const upgradableContractDeployAndVerify = async ({
   })
 
   return deployedContract
+}
+
+export const upgradeContractAndVerify = async ({
+  nexUpgradeContractName,
+  currentContract,
+  upgradeOptions,
+}: UpgradableContractToUpgradeOption) => {
+  const constructorArguments = upgradeOptions?.constructorArgs || []
+
+  const contractFactory = await ethers.getContractFactory(nexUpgradeContractName)
+
+  const newUpgradedContract = await upgrades.upgradeProxy(
+    currentContract.address,
+    contractFactory,
+    {
+      ...upgradeOptions,
+      constructorArgs: constructorArguments,
+    }
+  )
+
+  await newUpgradedContract.deployed()
+
+  console.log(
+    `upgrade to "${nexUpgradeContractName}" (tx: ${newUpgradedContract.deployTransaction.hash})...: deployed at ${newUpgradedContract.address}`
+  )
+
+  // await unlessOnDevelopmentChainVerifyContract(network.name, {
+  //   contractAddress: newUpgradedContract.address,
+  //   constructorArguments,
+  //   contractName: nexUpgradeContractName,
+  //   isProxy: true,
+  // })
 }

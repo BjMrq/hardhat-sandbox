@@ -11,11 +11,11 @@ const deployColorBox: DeployFunction = async ({}: HardhatRuntimeEnvironment) => 
     deploymentArguments: ["blue"],
   })
 
-  const ContractV2 = await upgradeContractAndVerify({
-    nexUpgradeContractName: "ColorBoxV2",
-    currentContract: ContractV1,
-  })
+  // const ContractV2 = await upgradeContractAndVerify({
+  //   nexUpgradeContractName: "ColorBoxV2",
+  //   currentContract: ContractV1,
+  // })
 }
 
-deployColorBox.tags = ["all", "Box"]
+deployColorBox.tags = ["all", "Box", "upgradable"]
 export default deployColorBox

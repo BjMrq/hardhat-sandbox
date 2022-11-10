@@ -4,7 +4,9 @@ import "@typechain/hardhat"
 import "@nomiclabs/hardhat-ethers"
 import "@nomiclabs/hardhat-waffle"
 import "@nomiclabs/hardhat-etherscan"
-import "@openzeppelin/hardhat-upgrades"
+// import "@openzeppelin/hardhat-upgrades"
+import "@matterlabs/hardhat-zksync-deploy"
+import "@matterlabs/hardhat-zksync-solc"
 import "./tasks"
 import { HardhatUserConfig, NetworkUserConfig } from "hardhat/types"
 import "dotenv/config"
@@ -29,12 +31,21 @@ const hardhatConfig: HardhatUserConfig = {
   defaultNetwork: "hardhat",
   solidity: {
     version: "0.8.4",
+    settings: {},
+  },
+  zksolc: {
+    version: "1.2.0",
+    compilerSource: "docker",
     settings: {
-      optimizer: {
-        enabled: true,
-        runs: 200,
+      experimental: {
+        dockerImage: "matterlabs/zksolc",
+        tag: "v1.2.0",
       },
     },
+  },
+  zkSyncDeploy: {
+    zkSyncNetwork: "https://zksync2-testnet.zksync.dev",
+    ethNetwork: "goerli", // Can also be the RPC URL of the network (e.g. `https://goerli.infura.io/v3/<API_KEY>`)
   },
   networks: {
     hardhat: {
@@ -69,6 +80,11 @@ const hardhatConfig: HardhatUserConfig = {
     avalanche: {
       url: "https://api.avax.network/ext/bc/C/rpc",
       chainId: 43114,
+      accounts: { mnemonic: process.env.OZ_MNEMONIC },
+    },
+    zksynctest: {
+      zksync: true,
+      url: `https://zksync2-testnet.zksync.dev`,
       accounts: { mnemonic: process.env.OZ_MNEMONIC },
     },
     hedera: {
@@ -112,6 +128,10 @@ const hardhatConfig: HardhatUserConfig = {
     astroBuyer: { default: 5 },
     astroSeller: { default: 6 },
     maliciousEncounter: { default: 7 },
+  },
+  privateKeys: {
+    oz: process.env.OZ_PRIVATE_KEY as string,
+    hederaEOA: process.env.ETHERS_PRIVATE_KEY as string,
   },
   paths: {
     sources: "./contracts",

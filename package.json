@@ -51,8 +51,11 @@
   },
   "dependencies": {
     "@hashgraph/sdk": "^2.18.0",
+    "@matterlabs/hardhat-zksync-deploy": "^0.5.2",
+    "@matterlabs/hardhat-zksync-solc": "^0.3.10",
     "@nomiclabs/hardhat-etherscan": "^3.1.0",
-    "defender-relay-client": "^1.28.1"
+    "defender-relay-client": "^1.28.1",
+    "zksync-web3": "^0.11.1"
   },
   "volta": {
     "node": "18.8.0"

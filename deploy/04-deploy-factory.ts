@@ -15,5 +15,5 @@ const deployColorBox: DeployFunction = async ({
   await (await contractFactory.createNewBox("factored")).wait(6)
 }
 
-deployColorBox.tags = ["all", "Box"]
+deployColorBox.tags = ["all", "Box", "factory"]
 export default deployColorBox

@@ -30,7 +30,6 @@ task("get-address-info")
       }
 
       if (address) {
-        address
         console.log({
           balance: formatEther((await provider.getBalance(address)).toString()),
           nonce: await provider.getTransactionCount(address),

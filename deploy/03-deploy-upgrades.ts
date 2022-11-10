@@ -8,5 +8,5 @@ const deployColorBox: DeployFunction = async ({}: HardhatRuntimeEnvironment) => 
   })
 }
 
-deployColorBox.tags = ["all", "Box"]
+deployColorBox.tags = ["all", "Box", "upgradable"]
 export default deployColorBox

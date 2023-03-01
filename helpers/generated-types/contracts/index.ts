@@ -3,6 +3,10 @@
 /* eslint-disable */
 import type * as factoredBoxSol from "./FactoredBox.sol";
 export type { factoredBoxSol };
+import type * as greeterSol from "./Greeter.sol";
+export type { greeterSol };
+import type * as vaultSol from "./Vault.sol";
+export type { vaultSol };
 import type * as verifyableBoxSol from "./VerifyableBox.sol";
 export type { verifyableBoxSol };
 import type * as test from "./test";

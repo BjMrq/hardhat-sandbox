@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/Vault.sol": {
+      "content": "//SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract Vault {\n    uint256 public feePercentage;\n  uint256 public feesCollected;\n  address public admin;\n  address payable public wallet;\n  \n  mapping(address => uint256) public balances;\n  \n  event Sweeped(address wallet, uint256 value);\n  event Deposited(address from, uint256 value, uint256 fee);\n  event Withdrawn(address to, uint256 value);\n  event FeeChanged(uint256 newFee);\n  \n  modifier onlyAdmin() {\n      require(msg.sender == admin, \"Unauthorized\");\n    _;\n  }\n\n  function initialize(uint256 _fee, address _admin, address payable _wallet) public {\n      require(admin == address(0), \"Already initialized\");\n    wallet = _wallet;\n    admin = _admin;\n    feePercentage = _fee;\n  }\n\n  function version() public virtual pure returns (string memory) {\n      return \"v1\";\n  }\n\n  function deposit() public virtual payable {\n      uint256 fee = msg.value * feePercentage / 100;\n    balances[msg.sender] += (msg.value - fee);\n    feesCollected += fee;\n    emit Deposited(msg.sender, msg.value, fee);\n  }\n\n  function withdraw() public virtual {\n      uint256 funds = balances[msg.sender];\n    balances[msg.sender] = 0;\n    payable(msg.sender).transfer(funds);\n    emit Withdrawn(msg.sender, funds);\n  }\n  \n  function setFee(uint256 _fee) onlyAdmin public {\n      feePercentage = _fee;\n    emit FeeChanged(_fee);\n  }\n\n  function sweep() public {\n      wallet.transfer(feesCollected);\n    emit Sweeped(wallet, feesCollected);\n    feesCollected = 0;\n  }\n}\n\ncontract VaultV2 is Vault {\n    bool public paused;\n\n  event Paused();\n  event Unpaused();\n\n  modifier whenNotPaused() {\n      require(!paused, \"Contract is paused\");\n    _;\n  }\n\n  function version() public override virtual pure returns (string memory) {\n      return \"v2\";\n  }\n\n  function pause() public {\n      require(!paused, \"Contract already paused\");\n    paused = true;\n    emit Paused();\n  }\n\n  function unpause() public {\n      require(paused, \"Contract not paused\");\n    paused = false;\n    emit Unpaused();\n  }\n\n  function withdraw() public override whenNotPaused {\n      super.withdraw();\n  }\n\n  function deposit() public payable override whenNotPaused {\n      super.deposit();\n  }\n}\n\ncontract VaultV3 is VaultV2 {\n    function version() public override pure returns (string memory) {\n      return \"v3.0\";\n  }\n}"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

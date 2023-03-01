@@ -2,11 +2,13 @@ import { DeployProxyOptions, UpgradeProxyOptions } from "@openzeppelin/hardhat-u
 import { Contract } from "ethers"
 import { getNamedAccounts, deployments, network, ethers, upgrades } from "hardhat"
 import { DeployOptions, DeployResult } from "hardhat-deploy/types"
+import { not } from "../condition"
 import { awaitDeployForBlocks, unlessOnDevelopmentChainVerifyContract } from "./verify"
 
 type BaseToDeployOption = {
   contractName: string
   deploymentArguments?: unknown[]
+  skipVerify?: boolean
 }
 
 type ContractToDeployOption = BaseToDeployOption & {
@@ -27,6 +29,7 @@ export const simpleContractDeployAndVerify = async ({
   contractName,
   deploymentArguments,
   deploymentOptions,
+  skipVerify,
 }: ContractToDeployOption): Promise<DeployResult> => {
   const constructorArguments = deploymentArguments || []
 
@@ -40,11 +43,12 @@ export const simpleContractDeployAndVerify = async ({
     ...deploymentOptions,
   })
 
-  await unlessOnDevelopmentChainVerifyContract(network.name, {
-    contractAddress: deployResult.address,
-    constructorArguments: constructorArguments,
-    contractName,
-  })
+  if (not(skipVerify))
+    await unlessOnDevelopmentChainVerifyContract(network.name, {
+      contractAddress: deployResult.address,
+      constructorArguments: constructorArguments,
+      contractName,
+    })
 
   return deployResult
 }
@@ -53,6 +57,7 @@ export const upgradableContractDeployAndVerify = async ({
   contractName,
   deploymentArguments,
   deploymentOptions,
+  skipVerify,
 }: UpgradableContractToDeployOption): Promise<Contract> => {
   const constructorArguments = deploymentArguments || []
 
@@ -68,12 +73,13 @@ export const upgradableContractDeployAndVerify = async ({
     `upgradable "${contractName}" (tx: ${deployedContract.deployTransaction.hash})...: deployed at ${deployedContract.address}`
   )
 
-  await unlessOnDevelopmentChainVerifyContract(network.name, {
-    contractAddress: deployedContract.address,
-    constructorArguments,
-    contractName,
-    isProxy: true,
-  })
+  if (not(skipVerify))
+    await unlessOnDevelopmentChainVerifyContract(network.name, {
+      contractAddress: deployedContract.address,
+      constructorArguments,
+      contractName,
+      isProxy: true,
+    })
 
   return deployedContract
 }

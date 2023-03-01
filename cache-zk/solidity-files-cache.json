@@ -2815,6 +2815,58 @@
       "artifacts": [
         "AggregatorV3Interface"
       ]
+    },
+    "/Users/bjmrq/Code/Sandboxes/Sandbox--Hardhat/contracts/Greeter.sol": {
+      "lastModificationDate": 1668179993584,
+      "contentHash": "50dc274033bbebf641452b3939f75dea",
+      "sourceName": "contracts/Greeter.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        },
+        "zksolc": {
+          "version": "1.2.0",
+          "compilerSource": "docker",
+          "settings": {
+            "compilerPath": "",
+            "experimental": {
+              "dockerImage": "matterlabs/zksolc",
+              "tag": "v1.2.0"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Greeter"
+      ]
     }
   }
 }

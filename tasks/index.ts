@@ -1,5 +1,5 @@
-import "./get-current-gas-info"
-import "./get-current-block-info"
+import "./get-block-info"
+import "./get-gas-info"
 import "./get-address-info"
 import "./get-logs"
 import "./get-code"

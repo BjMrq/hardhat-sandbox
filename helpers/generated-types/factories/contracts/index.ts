@@ -2,6 +2,8 @@
 /* tslint:disable */
 /* eslint-disable */
 export * as factoredBoxSol from "./FactoredBox.sol";
+export * as greeterSol from "./Greeter.sol";
+export * as vaultSol from "./Vault.sol";
 export * as verifyableBoxSol from "./VerifyableBox.sol";
 export * as test from "./test";
 export { AccessRolesBox__factory } from "./AccessRolesBox__factory";
